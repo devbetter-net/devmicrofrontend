@@ -1,8 +1,16 @@
-// packages/shared-components/Button.js
 import React from 'react';
 
-const Button = ({ children, onClick }) => (
-    <button onClick={onClick}>{children}</button>
-);
+interface ButtonProps {
+    text: string;
+    onClick: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+    return (
+        <button onClick={onClick}>
+            {text}
+        </button>
+    );
+};
 
 export default Button;
